@@ -1,11 +1,10 @@
 /**
  * @author panxinwu
- * @date 2016-8-5
- * @desc 整站配置数据
+ * @date 2016-8-8
  * var o2Log = new o2Log({
  *   debug: true
  * });
- * 远程开启： url?debug=true
+ * 远程开启： window.locaiton.href?debug=true
  */
 'use strict';
 //fixed to IE
