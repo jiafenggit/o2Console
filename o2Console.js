@@ -74,18 +74,20 @@ function getUrlParams(url) {
         params = params.split('#')[0];
         if (!params) {
             result = false;
-        }
-    }
-    params = params.split('&');
-    for (var i = 0, j = params.length; i < j; i++) {
-        var param = params[i].split('=');
-        if (param.length !== 2) {
-            result = false;
-        }else if(param[0] === 'debug' && param[1] === 'true'){
-            result = true;
         }else{
-            result = false;
+            params = params.split('&');
+            for (var i = 0, j = params.length; i < j; i++) {
+                var param = params[i].split('=');
+                if (param.length !== 2) {
+                    result = false;
+                }else if(param[0] === 'debug' && param[1] === 'true'){
+                    result = true;
+                }else{
+                    result = false;
+                }
+            }
         }
     }
+    
     return result;
 };
