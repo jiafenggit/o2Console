@@ -6,6 +6,8 @@
  * });
  * 远程开启： window.locaiton.href?debug=true
  */
+ var o2Log = {};
+ ;(function(){
 'use strict';
 //fixed to IE
 var methods = ["assert", "cd", "clear", "count", "countReset",
@@ -25,8 +27,8 @@ var methods = ["assert", "cd", "clear", "count", "countReset",
 }
 //URL是否远程开启
 var urlDebug = getUrlParams(window.location.href);
-var o2Log = function(arg){
-    this.debug = urlDebug || arg.debug;
+    o2Log = function(arg){
+    this.debug = urlDebug;
 }
 o2Log.prototype = {
     log : function(obj){
@@ -88,6 +90,7 @@ function getUrlParams(url) {
             }
         }
     }
-    
     return result;
 };
+})();
+var o2Console = new o2Log();
